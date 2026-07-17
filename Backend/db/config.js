@@ -9,7 +9,6 @@ const __dirname = path.dirname(__filename);
 
 // Database connection pool
 import "dotenv/config"; 
-import path from "path";
 import { fileURLToPath } from "url";
 import mysql from "mysql2/promise";
 
