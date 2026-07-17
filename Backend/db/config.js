@@ -22,7 +22,7 @@ export const db = mysql.createPool({
   user: process.env.DB_USER || "root",
   password: process.env.DB_PASS || "", 
   database: process.env.DB_NAME || "evangadi_forum",
-  port: process.env.DB_PORT || 3306, // 1. ይህንን ጨምረናል
+  port: process.env.DB_PORT || 13751, // 1. ይህንን ጨምረናል
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
