@@ -1,0 +1,401 @@
+/* ─── Design tokens ────────────────────────────────────────────────────────── */
+:root {
+  --color-brand:        #E8622A;   /* orange accent */
+  --color-brand-light:  #FDF0EA;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-text-muted:   #9CA3AF;
+  --color-border:       #E5E7EB;
+  --color-bg-page:      #F9FAFB;
+  --color-bg-card:      #FFFFFF;
+  --color-badge-bg:     #E8622A;
+  --color-badge-text:   #FFFFFF;
+  --radius-card:        8px;
+  --radius-sm:          4px;
+  --shadow-card:        0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* ─── Page shell ───────────────────────────────────────────────────────────── */
+.dashboard {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  background: var(--color-bg-page);
+  min-height: 100vh;
+}
+
+/* ─── Hero section ─────────────────────────────────────────────────────────── */
+.heroSection {
+  margin-bottom: 28px;
+}
+
+.breadcrumb {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-brand);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.heroTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+
+.heroSubtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0;
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+/* ─── Action cards ─────────────────────────────────────────────────────────── */
+.actionCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.actionCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.actionCard:hover {
+  box-shadow: var(--shadow-card);
+  border-color: #D1D5DB;
+}
+
+.actionCardIcon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-page);
+}
+
+.actionCardContent {
+  min-width: 0;
+}
+
+.actionCardTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 3px;
+}
+
+.actionCardDesc {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ─── Stats bar ────────────────────────────────────────────────────────────── */
+.statsBar {
+  margin-bottom: 28px;
+}
+
+.statsDescription {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0 0 10px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--color-bg-card);
+}
+
+.statCard {
+  padding: 14px 18px;
+  border-right: 1px solid var(--color-border);
+}
+
+.statCard:last-child {
+  border-right: none;
+}
+
+.statLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+/* ─── Discussion feed ──────────────────────────────────────────────────────── */
+.discussionFeed {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.feedHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.feedTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 2px;
+}
+
+.feedSubtitle {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.newestButton {
+  padding: 6px 14px;
+  background: var(--color-brand);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.newestButton:hover {
+  background: #d4551f;
+}
+
+/* ─── Content area ─────────────────────────────────────────────────────────── */
+.contentArea {
+  /* no extra padding — cards handle their own */
+}
+
+/* ─── Loading skeleton ─────────────────────────────────────────────────────── */
+.loadingState {
+  padding: 12px 0;
+}
+
+.skeletonCard {
+  height: 88px;
+  margin: 0;
+  background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skeletonCard:last-child {
+  border-bottom: none;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── Error banner ─────────────────────────────────────────────────────────── */
+.errorBanner {
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.errorText {
+  font-size: 14px;
+  color: #EF4444;
+  margin: 0;
+  flex: 1;
+}
+
+.retryButton {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-brand);
+  background: transparent;
+  border: 1px solid var(--color-brand);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.retryButton:hover {
+  background: var(--color-brand-light);
+}
+
+/* ─── Empty state ──────────────────────────────────────────────────────────── */
+.emptyState {
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.emptyIcon {
+  color: var(--color-border);
+  margin-bottom: 16px;
+}
+
+.emptyTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 8px;
+}
+
+.emptyText {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0 0 20px;
+}
+
+.emptyAction {
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-brand);
+  background: transparent;
+  border: 1px solid var(--color-brand);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.emptyAction:hover {
+  background: var(--color-brand-light);
+}
+
+/* ─── Questions list ───────────────────────────────────────────────────────── */
+.questionsList {
+  /* list container — no extra padding */
+}
+
+.resultCount {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  padding: 10px 20px 0;
+  margin: 0;
+}
+
+.cardsContainer {
+  /* cards stack flush inside the feed panel */
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .dashboard {
+    padding: 20px 16px 48px;
+  }
+
+  .actionCards {
+    grid-template-columns: 1fr;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statCard:nth-child(2) {
+    border-right: none;
+  }
+
+  .statCard:nth-child(1),
+  .statCard:nth-child(2) {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .heroTitle {
+    font-size: 22px;
+  }
+}
+
+
+.contentArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultCount {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  padding: 14px 20px 10px;
+  margin: 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.pageNumbers {
+  display: flex;
+  gap: 6px;
+}
+
+.pageBtn {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.pageBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.activePage {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
